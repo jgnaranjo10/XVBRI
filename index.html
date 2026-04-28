@@ -4,9 +4,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Mis XV Años - Una Historia Mágica</title>
-<script async="" id="www-widgetapi-script" src="https://www.youtube.com/s/player/8456c9de/www-widgetapi.vflset/www-widgetapi.js" type="text/javascript"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script async="" id="www-widgetapi-script" src="https://www.youtube.com/s/player/8456c9de/www-widgetapi.vflset/www-widgetapi.js" type="text/javascript"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -93,14 +93,22 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 215, 0, 0.2);
         }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
 </head>
-<body class="bg-background text-on-background font-body-rt overflow-x-hidden fairy-dust-bg"><canvas class="fixed inset-0 pointer-events-none z-[1]" height="4889" id="fairyDustCanvas" width="390"></canvas>
+<body class="bg-background text-on-background font-body-rt overflow-x-hidden fairy-dust-bg">
+<canvas class="fixed inset-0 pointer-events-none z-[1]" id="fairyDustCanvas"></canvas>
 <script>
   const canvas = document.getElementById('fairyDustCanvas');
   const ctx = canvas.getContext('2d');
@@ -149,15 +157,15 @@
 <!-- Top Navigation Shell -->
 <header class="fixed top-0 left-0 w-full flex justify-between items-center px-6 py-3 bg-stone-50/80 backdrop-blur-xl border-b border-yellow-200/30 z-50 shadow-[0_4px_20px_rgba(255,215,0,0.12)]">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-yellow-600" data-icon="auto_awesome" style="">auto_awesome</span>
-<span class="font-serif text-2xl font-bold text-yellow-600 drop-shadow-[0_0_8px_rgba(255,215,0,0.4)]" style="">Mis XV Años</span>
+<span class="material-symbols-outlined text-yellow-600" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-serif text-2xl font-bold text-yellow-600 drop-shadow-[0_0_8px_rgba(255,215,0,0.4)]">Mis XV Años</span>
 </div>
 <div class="hidden md:flex gap-8 items-center">
-<a class="font-serif text-lg tracking-wide text-yellow-700 font-semibold border-b-2 border-yellow-500 cursor-pointer duration-200 ease-in-out" href="#inicio" style="">Inicio</a>
-<a class="font-serif text-lg tracking-wide text-stone-500 hover:scale-110 hover:text-yellow-500 transition-all duration-300" href="#detalles" style="">Evento</a>
-<a class="font-serif text-lg tracking-wide text-stone-500 hover:scale-110 hover:text-yellow-500 transition-all duration-300" href="#confirmar" style="">Confirmar</a>
+<a class="font-serif text-lg tracking-wide text-yellow-700 font-semibold border-b-2 border-yellow-500 cursor-pointer duration-200 ease-in-out" href="#inicio">Inicio</a>
+<a class="font-serif text-lg tracking-wide text-stone-500 hover:scale-110 hover:text-yellow-500 transition-all duration-300" href="#detalles">Evento</a>
+<a class="font-serif text-lg tracking-wide text-stone-500 hover:scale-110 hover:text-yellow-500 transition-all duration-300" href="#confirmar">Confirmar</a>
 </div>
-<button class="material-symbols-outlined text-yellow-600 cursor-pointer active:scale-95 duration-200 z-50" id="bgMusicToggle" style="">volume_up</button>
+<button class="material-symbols-outlined text-yellow-600 cursor-pointer active:scale-95 duration-200 z-50" id="bgMusicToggle">volume_up</button>
 </header>
 <main class="relative">
 <!-- 1. Hero / Cover Section -->
@@ -167,29 +175,29 @@
 <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-container/10 rounded-full blur-[150px]"></div>
 </div>
 <div class="relative z-10 space-y-6 max-w-4xl">
-<span class="font-label-sm text-label-sm text-primary tracking-[0.3em] uppercase block" style="">Britany Chavarria Ortega</span>
-<h1 class="font-display-lg text-[64px] md:text-[100px] leading-none text-primary italic" style="">HABÍA UNA VEZ</h1>
+<span class="font-label-sm text-label-sm text-primary tracking-[0.3em] uppercase block">Britany Chavarria Ortega</span>
+<h1 class="font-display-lg text-[64px] md:text-[100px] leading-none text-primary italic">HABÍA UNA VEZ</h1>
 <div class="flex justify-center items-center gap-4 py-8">
 <div class="h-px w-12 md:w-24 bg-primary/30"></div>
-<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="star" data-weight="fill" style="">star</span>
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="star" data-weight="fill">star</span>
 <div class="h-px w-12 md:w-24 bg-primary/30"></div>
 </div>
-<p class="font-callout-it text-callout-it text-on-surface-variant max-w-2xl mx-auto italic" style="">
+<p class="font-callout-it text-callout-it text-on-surface-variant max-w-2xl mx-auto italic">
                     Un sueño que comenzó hace quince años y hoy se convierte en la más hermosa de las realidades.
                 </p>
 </div>
 <!-- Decorative Floating Elements -->
 <div class="mt-section-margin relative w-full max-w-lg aspect-video rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(112,93,0,0.15)] border-4 border-surface-container-highest">
-<img class="w-full h-full object-cover" data-alt="Dreamy outdoor setting with fairy lights, golden Hour lighting, and elegant floral arrangements in a lush garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWEmWzgoFiLIDNEQyvngWO2Vv8xDDBEiQP5pyVUT4NU5uFQPjqdrImK5zjHWui_I25vtZiQSKnEapT-1d1toQONVDiDgbSXcRn7GrMEmQlXEvuuNYuRdIsSIemZ1mZsqtym6_buKlfwB-nMysvY9pWw5btjap1lsn0scRSViEh9zlfzyxTvCE8EdTNiMCWE3ljty_QsIBaFZz-SwELcm4Uetdqzkw0KDZ3OHPtgQUxSCu27Lj7pVslElaqlhDM1RUX1shUxNrnZokQ" style=""/>
+<img alt="Dreamy outdoor setting with fairy lights, golden Hour lighting, and elegant floral arrangements in a lush garden" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWEmWzgoFiLIDNEQyvngWO2Vv8xDDBEiQP5pyVUT4NU5uFQPjqdrImK5zjHWui_I25vtZiQSKnEapT-1d1toQONVDiDgbSXcRn7GrMEmQlXEvuuNYuRdIsSIemZ1mZsqtym6_buKlfwB-nMysvY9pWw5btjap1lsn0scRSViEh9zlfzyxTvCE8EdTNiMCWE3ljty_QsIBaFZz-SwELcm4Uetdqzkw0KDZ3OHPtgQUxSCu27Lj7pVslElaqlhDM1RUX1shUxNrnZokQ"/>
 </div>
 </section>
 <!-- 2. Invitation Section -->
-<section class="py-section-margin px-container-padding bg-surface-container-low/30 relative z-10">
+<section class="py-section-margin px-container-padding bg-surface-container-low/30 relative z-10 reveal">
 <div class="max-w-3xl mx-auto text-center space-y-element-gap">
 <div class="p-12 glass-card rounded-[40px] parchment-glow relative">
-<span class="material-symbols-outlined text-secondary text-5xl mb-6 block" data-icon="auto_stories" style="">auto_stories</span>
-<h2 class="font-headline-md text-headline-md text-primary mb-6" style="">Te invito a mi mágica fiesta de XV años</h2>
-<p class="font-body-rt text-body-rt text-on-surface leading-relaxed" style="">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6 block" data-icon="auto_stories">auto_stories</span>
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Te invito a mi mágica fiesta de XV años</h2>
+<p class="font-body-rt text-body-rt text-on-surface leading-relaxed">
                         En el corazón de un bosque encantado, donde los sueños bailan con la luz de la luna, 
                         quiero celebrar el inicio de este nuevo capítulo junto a las personas que más amo.
                     </p>
@@ -200,110 +208,115 @@
 <section class="py-section-margin px-container-padding relative z-10" id="detalles">
 <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Date Card -->
-<div class="glass-card p-10 rounded-3xl text-center flex flex-col items-center justify-center border-b-4 border-primary">
-<span class="material-symbols-outlined text-primary mb-4 text-4xl" data-icon="calendar_today" style="">calendar_today</span>
-<h3 class="font-label-sm text-label-sm text-outline uppercase tracking-widest" style="">Fecha</h3>
-<p class="font-headline-md text-headline-md text-on-surface" style="">25 de Julio</p>
-<p class="font-body-rt text-body-rt text-secondary font-bold" style="">2026</p>
+<div class="glass-card p-10 rounded-3xl text-center flex flex-col items-center justify-center border-b-4 border-primary reveal">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl" data-icon="calendar_today">calendar_today</span>
+<h3 class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Fecha</h3>
+<p class="font-headline-md text-headline-md text-on-surface">25 de Julio</p>
+<p class="font-body-rt text-body-rt text-secondary font-bold">2026</p>
 </div>
 <!-- Time Card -->
-<div class="glass-card p-10 rounded-3xl text-center flex flex-col items-center justify-center border-b-4 border-primary">
-<span class="material-symbols-outlined text-primary mb-4 text-4xl" data-icon="schedule" style="">schedule</span>
-<h3 class="font-label-sm text-label-sm text-outline uppercase tracking-widest" style="">Hora</h3>
-<p class="font-headline-md text-headline-md text-on-surface" style="">03:30 p.m.</p>
-<p class="font-body-rt text-body-rt text-secondary italic" style="">Recepción</p>
+<div class="glass-card p-10 rounded-3xl text-center flex flex-col items-center justify-center border-b-4 border-primary reveal">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl" data-icon="schedule">schedule</span>
+<h3 class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Hora</h3>
+<p class="font-headline-md text-headline-md text-on-surface">04:00 p.m.</p>
+<p class="font-body-rt text-body-rt text-secondary italic">Evento Principal</p>
 </div>
 <!-- Location Card -->
-<div class="glass-card p-10 rounded-3xl text-center flex flex-col items-center justify-center border-b-4 border-primary">
-<span class="material-symbols-outlined text-primary mb-4 text-4xl" data-icon="location_on" style="">location_on</span>
-<h3 class="font-label-sm text-label-sm text-outline uppercase tracking-widest" style="">Lugar</h3>
-<p class="font-headline-md text-headline-md text-on-surface" style="">Hacienda de los Santos</p>
-<a class="mt-4 px-6 py-2 bg-primary-container text-on-primary-container rounded-full font-label-sm shadow-[0_4px_15px_rgba(255,215,0,0.4)] hover:scale-105 transition-transform flex items-center gap-2" href="https://maps.app.goo.gl/KpoSSgmaoATxXUur6" style="" target="_blank">
-                        Ver ubicación <span class="material-symbols-outlined text-sm" data-icon="map" style="">map</span>
+<div class="glass-card p-10 rounded-3xl text-center flex flex-col items-center justify-center border-b-4 border-primary reveal">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl" data-icon="location_on">location_on</span>
+<h3 class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Lugar</h3>
+<p class="font-headline-md text-headline-md text-on-surface">Hacienda de los Santos</p>
+<a class="mt-4 px-6 py-2 bg-primary-container text-on-primary-container rounded-full font-label-sm shadow-[0_4px_15px_rgba(255,215,0,0.4)] hover:scale-105 transition-transform flex items-center gap-2" href="https://maps.app.goo.gl/KpoSSgmaoATxXUur6" target="_blank">
+                        Ver ubicación <span class="material-symbols-outlined text-sm" data-icon="map">map</span>
 </a>
 </div>
 </div>
 <!-- Countdown Timer -->
-<div class="mt-16 max-w-2xl mx-auto glass-card p-8 rounded-full flex justify-around items-center border border-primary/20">
+<div class="mt-16 max-w-2xl mx-auto glass-card p-8 rounded-3xl md:rounded-full flex justify-around items-center border border-primary/20 reveal" id="countdown">
 <div class="text-center">
-<span class="block font-headline-md text-primary" style="">45</span>
-<span class="font-label-sm text-xs text-outline uppercase" style="">Días</span>
+<span class="block font-headline-md text-primary" id="days">00</span>
+<span class="font-label-sm text-xs text-outline uppercase">Días</span>
 </div>
-<div class="text-primary/30 text-2xl font-light" style="">|</div>
+<div class="text-primary/30 text-2xl font-light">|</div>
 <div class="text-center">
-<span class="block font-headline-md text-primary" style="">12</span>
-<span class="font-label-sm text-xs text-outline uppercase" style="">Horas</span>
+<span class="block font-headline-md text-primary" id="hours">00</span>
+<span class="font-label-sm text-xs text-outline uppercase">Horas</span>
 </div>
-<div class="text-primary/30 text-2xl font-light" style="">|</div>
+<div class="text-primary/30 text-2xl font-light">|</div>
 <div class="text-center">
-<span class="block font-headline-md text-primary" style="">30</span>
-<span class="font-label-sm text-xs text-outline uppercase" style="">Mins</span>
+<span class="block font-headline-md text-primary" id="minutes">00</span>
+<span class="font-label-sm text-xs text-outline uppercase">Mins</span>
+</div>
+<div class="text-primary/30 text-2xl font-light">|</div>
+<div class="text-center">
+<span class="block font-headline-md text-primary" id="seconds">00</span>
+<span class="font-label-sm text-xs text-outline uppercase">Segs</span>
 </div>
 </div>
 </section>
 <!-- 4. Schedule (Vertical Timeline) -->
 <section class="py-section-margin px-container-padding bg-surface-container-high/20 relative z-10">
 <div class="max-w-4xl mx-auto">
-<div class="text-center mb-16">
-<h2 class="font-display-lg text-headline-md text-primary italic" style="">El programa de la noche</h2>
+<div class="text-center mb-16 reveal">
+<h2 class="font-display-lg text-headline-md text-primary italic">El programa de la noche</h2>
 <div class="w-16 h-1 bg-primary-container mx-auto mt-4 rounded-full"></div>
 </div>
 <div class="relative">
 <!-- Timeline Line -->
 <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-container via-secondary-container to-primary-container md:-translate-x-1/2"></div>
 <!-- Timeline Item 1 -->
-<div class="relative mb-12 pl-12 md:pl-0">
+<div class="relative mb-12 pl-12 md:pl-0 reveal">
 <div class="md:flex items-center">
 <div class="md:w-1/2 md:pr-12 md:text-right">
-<span class="font-label-sm text-secondary font-bold" style="">19:00 PM</span>
-<h4 class="font-headline-md text-xl text-on-surface" style="">Recepción de Invitados</h4>
-<p class="text-on-surface-variant text-sm italic" style="">Coctel de bienvenida en el jardín real</p>
+<span class="font-label-sm text-secondary font-bold">19:00 PM</span>
+<h4 class="font-headline-md text-xl text-on-surface">Recepción de Invitados</h4>
+<p class="text-on-surface-variant text-sm italic">Coctel de bienvenida en el jardín real</p>
 </div>
 <div class="absolute left-0 md:left-1/2 w-10 h-10 bg-surface border-4 border-primary-container rounded-full flex items-center justify-center md:-translate-x-1/2 z-10">
-<span class="material-symbols-outlined text-primary text-xl" data-icon="local_bar" style="">local_bar</span>
+<span class="material-symbols-outlined text-primary text-xl" data-icon="local_bar">local_bar</span>
 </div>
 <div class="md:w-1/2 md:pl-12"></div>
 </div>
 </div>
 <!-- Timeline Item 2 -->
-<div class="relative mb-12 pl-12 md:pl-0">
+<div class="relative mb-12 pl-12 md:pl-0 reveal">
 <div class="md:flex items-center">
 <div class="md:w-1/2 md:pr-12"></div>
 <div class="absolute left-0 md:left-1/2 w-10 h-10 bg-surface border-4 border-secondary-container rounded-full flex items-center justify-center md:-translate-x-1/2 z-10">
-<span class="material-symbols-outlined text-secondary text-xl" data-icon="star" style="">star</span>
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="star">star</span>
 </div>
 <div class="md:w-1/2 md:pl-12">
-<span class="font-label-sm text-secondary font-bold" style="">20:30 PM</span>
-<h4 class="font-headline-md text-xl text-on-surface" style="">Entrada Triunfal</h4>
-<p class="text-on-surface-variant text-sm italic" style="">La magia comienza bajo las estrellas</p>
+<span class="font-label-sm text-secondary font-bold">20:30 PM</span>
+<h4 class="font-headline-md text-xl text-on-surface">Entrada Triunfal</h4>
+<p class="text-on-surface-variant text-sm italic">La magia comienza bajo las estrellas</p>
 </div>
 </div>
 </div>
 <!-- Timeline Item 3 -->
-<div class="relative mb-12 pl-12 md:pl-0">
+<div class="relative mb-12 pl-12 md:pl-0 reveal">
 <div class="md:flex items-center">
 <div class="md:w-1/2 md:pr-12 md:text-right">
-<span class="font-label-sm text-secondary font-bold" style="">21:30 PM</span>
-<h4 class="font-headline-md text-xl text-on-surface" style="">El Vals Encantado</h4>
-<p class="text-on-surface-variant text-sm italic" style="">Un baile que trasciende el tiempo</p>
+<span class="font-label-sm text-secondary font-bold">21:30 PM</span>
+<h4 class="font-headline-md text-xl text-on-surface">El Vals Encantado</h4>
+<p class="text-on-surface-variant text-sm italic">Un baile que trasciende el tiempo</p>
 </div>
 <div class="absolute left-0 md:left-1/2 w-10 h-10 bg-surface border-4 border-primary-container rounded-full flex items-center justify-center md:-translate-x-1/2 z-10">
-<span class="material-symbols-outlined text-primary text-xl" data-icon="music_note" style="">music_note</span>
+<span class="material-symbols-outlined text-primary text-xl" data-icon="music_note">music_note</span>
 </div>
 <div class="md:w-1/2 md:pl-12"></div>
 </div>
 </div>
 <!-- Timeline Item 4 -->
-<div class="relative mb-12 pl-12 md:pl-0">
+<div class="relative mb-12 pl-12 md:pl-0 reveal">
 <div class="md:flex items-center">
 <div class="md:w-1/2 md:pr-12"></div>
 <div class="absolute left-0 md:left-1/2 w-10 h-10 bg-surface border-4 border-secondary-container rounded-full flex items-center justify-center md:-translate-x-1/2 z-10">
-<span class="material-symbols-outlined text-secondary text-xl" data-icon="restaurant" style="">restaurant</span>
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="restaurant">restaurant</span>
 </div>
 <div class="md:w-1/2 md:pl-12">
-<span class="font-label-sm text-secondary font-bold" style="">22:00 PM</span>
-<h4 class="font-headline-md text-xl text-on-surface" style="">Cena de Gala</h4>
-<p class="text-on-surface-variant text-sm italic" style="">Banquete real para nuestros invitados</p>
+<span class="font-label-sm text-secondary font-bold">22:00 PM</span>
+<h4 class="font-headline-md text-xl text-on-surface">Cena de Gala</h4>
+<p class="text-on-surface-variant text-sm italic">Banquete real para nuestros invitados</p>
 </div>
 </div>
 </div>
@@ -312,27 +325,27 @@
 </section>
 <!-- 5. RSVP Section -->
 <section class="py-section-margin px-container-padding relative z-10" id="confirmar">
-<div class="max-w-4xl mx-auto glass-card rounded-[40px] overflow-hidden flex flex-col md:flex-row shadow-[0_20px_60px_rgba(0,109,54,0.1)]">
+<div class="max-w-4xl mx-auto glass-card rounded-[40px] overflow-hidden flex flex-col md:flex-row shadow-[0_20px_60px_rgba(0,109,54,0.1)] reveal">
 <div class="md:w-2/5 relative min-h-[300px]">
-<img class="absolute inset-0 w-full h-full object-cover" data-alt="Close up of elegant white and gold party invitations on a textured cream surface with flower petals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_EpLnsQu58Tvmrs-ddUunNmdA2RJH00_SBkYv1KV7kXYUdZ0ftf9-mbIQoiiaS_y5CLS5o1EdqhSVIoJAJi7GUw9Qu_NgcaQ19ivf__v3IqRoLrBQ5CmIkLPPS8G9jDCU-5OtlGnXUDzW9BzqW6tCcUXSjoKoCIfukBkg2oUIWO4_XPVbFHIvXgDzUbH1uPOeUzo4Ol7lxcn6OoW0I9B8gjfoYaiJROyu01HeamD1FRNkqTLlYGOol-6hRt8UY6o754wj-5A55kBN" style=""/>
+<img alt="Close up of elegant white and gold party invitations on a textured cream surface with flower petals" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_EpLnsQu58Tvmrs-ddUunNmdA2RJH00_SBkYv1KV7kXYUdZ0ftf9-mbIQoiiaS_y5CLS5o1EdqhSVIoJAJi7GUw9Qu_NgcaQ19ivf__v3IqRoLrBQ5CmIkLPPS8G9jDCU-5OtlGnXUDzW9BzqW6tCcUXSjoKoCIfukBkg2oUIWO4_XPVbFHIvXgDzUbH1uPOeUzo4Ol7lxcn6OoW0I9B8gjfoYaiJROyu01HeamD1FRNkqTLlYGOol-6hRt8UY6o754wj-5A55kBN"/>
 <div class="absolute inset-0 bg-secondary/20 backdrop-blur-[2px]"></div>
 </div>
 <div class="md:w-3/5 p-10 md:p-16 space-y-6">
-<h2 class="font-headline-md text-headline-md text-primary" style="">Confirma tu asistencia</h2>
-<p class="font-body-rt text-on-surface-variant italic" style="">Sería un honor contar con tu presencia en esta noche mágica.</p>
+<h2 class="font-headline-md text-headline-md text-primary">Confirma tu asistencia</h2>
+<p class="font-body-rt text-on-surface-variant italic">Sería un honor contar con tu presencia en esta noche mágica.</p>
 <form class="space-y-4" id="rsvp-form">
 <div>
 <label class="block font-label-sm text-outline mb-1">Nombre Completo</label>
 <input class="w-full bg-surface-container border-outline-variant rounded-xl focus:ring-secondary focus:border-secondary transition-all" id="guest-name" list="names-list" placeholder="Busca tu nombre..." required="" type="text"/>
 <datalist id="names-list">
-<option value="Valeria">
-<option value="Juan">
-<option value="Maria">
-<option value="Carlos">
-<option value="Sofia">
-</option></option></option></option></option></datalist>
+<option value="Valeria"></option>
+<option value="Juan"></option>
+<option value="Maria"></option>
+<option value="Carlos"></option>
+<option value="Sofia"></option>
+</datalist>
 </div>
-<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl shadow-lg hover:shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all" style="" type="submit">
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl shadow-lg hover:shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all" type="submit">
                             Confirmar Invitación
                         </button>
 </form>
@@ -340,23 +353,23 @@
 </div>
 </section>
 <!-- 6. Gift Note Section -->
-<section class="py-section-margin px-container-padding bg-secondary/5 relative z-10">
+<section class="py-section-margin px-container-padding bg-secondary/5 relative z-10 reveal">
 <div class="max-w-2xl mx-auto text-center space-y-6">
 <div class="w-20 h-20 bg-primary-container/20 rounded-full flex items-center justify-center mx-auto mb-8">
-<span class="material-symbols-outlined text-primary text-4xl" data-icon="card_giftcard" style="">card_giftcard</span>
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="card_giftcard">card_giftcard</span>
 </div>
-<h2 class="font-headline-md text-headline-md text-secondary italic" style="">Tu presencia es mi mejor regalo...</h2>
-<p class="font-body-rt text-body-rt text-on-surface leading-relaxed italic" style="">
+<h2 class="font-headline-md text-headline-md text-secondary italic">Tu presencia es mi mejor regalo...</h2>
+<p class="font-body-rt text-body-rt text-on-surface leading-relaxed italic">
                     "Pero si deseas obsequiarme algo, puedes hacerlo a través de mi lluvia de sobres o cuenta bancaria."
                 </p>
 <div class="pt-6 flex justify-center gap-8">
 <div class="flex flex-col items-center gap-2">
-<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="payments" style="">payments</span>
-<span class="font-label-sm text-xs uppercase tracking-widest text-outline" style="">Efectivo</span>
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="payments">payments</span>
+<span class="font-label-sm text-xs uppercase tracking-widest text-outline">Efectivo</span>
 </div>
 <div class="flex flex-col items-center gap-2">
-<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="account_balance" style="">account_balance</span>
-<span class="font-label-sm text-xs uppercase tracking-widest text-outline" style="">Transferencia</span>
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="account_balance">account_balance</span>
+<span class="font-label-sm text-xs uppercase tracking-widest text-outline">Transferencia</span>
 </div>
 </div>
 </div>
@@ -366,11 +379,11 @@
 <div class="absolute inset-0 z-0 opacity-20">
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle,rgba(255,215,0,0.3)_0%,transparent_70%)]"></div>
 </div>
-<div class="relative z-10">
-<h2 class="font-display-lg text-[48px] md:text-[64px] text-primary italic mb-4" style="">Te esperamos</h2>
-<p class="font-callout-it text-callout-it text-secondary" style="">Para vivir juntos este cuento de hadas</p>
+<div class="relative z-10 reveal">
+<h2 class="font-display-lg text-[48px] md:text-[64px] text-primary italic mb-4">Te esperamos</h2>
+<p class="font-callout-it text-callout-it text-secondary">Para vivir juntos este cuento de hadas</p>
 <div class="mt-12">
-<span class="material-symbols-outlined text-primary-container text-6xl animate-pulse" data-icon="favorite" style="">favorite</span>
+<span class="material-symbols-outlined text-primary-container text-6xl animate-pulse" data-icon="favorite">favorite</span>
 </div>
 </div>
 </section>
@@ -378,50 +391,44 @@
 <!-- Footer Shell -->
 <footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-center items-center gap-4 text-center bg-stone-100/50 backdrop-blur-sm border-t border-yellow-100 font-serif italic text-sm text-emerald-700">
 <div class="flex flex-col gap-2">
-<span class="font-serif text-xl text-yellow-600" style="">Enchanted Celebration</span>
-<p class="text-stone-400" style="">© 2024 Enchanted Celebration</p>
+<span class="font-serif text-xl text-yellow-600">Enchanted Celebration</span>
+<p class="text-stone-400">© 2024 Enchanted Celebration</p>
 </div>
 <div class="flex gap-6 mt-4 md:mt-0">
-<a class="text-stone-400 hover:text-yellow-600 transition-colors" href="#" style="">Privacy Policy</a>
-<a class="text-stone-400 hover:text-yellow-600 transition-colors" href="#" style="">Contact Us</a>
+<a class="text-stone-400 hover:text-yellow-600 transition-colors" href="#">Privacy Policy</a>
+<a class="text-stone-400 hover:text-yellow-600 transition-colors" href="#">Contact Us</a>
 </div>
 </footer>
 <!-- Mobile Navigation Shell -->
 <nav class="md:hidden fixed bottom-0 left-0 w-full bg-stone-50/80 backdrop-blur-xl border-t border-yellow-200/30 flex justify-around items-center py-3 z-50 shadow-[0_-4px_20px_rgba(255,215,0,0.1)]">
-<a class="flex flex-col items-center gap-1 text-yellow-700 font-semibold" href="#inicio" style="">
-<span class="material-symbols-outlined" data-icon="home" style="">home</span>
-<span class="text-[10px] uppercase font-bold" style="">Inicio</span>
+<a class="flex flex-col items-center gap-1 text-yellow-700 font-semibold" href="#inicio">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] uppercase font-bold">Inicio</span>
 </a>
-<a class="flex flex-col items-center gap-1 text-stone-400" href="#detalles" style="">
-<span class="material-symbols-outlined" data-icon="event" style="">event</span>
-<span class="text-[10px] uppercase" style="">Evento</span>
+<a class="flex flex-col items-center gap-1 text-stone-400" href="#detalles">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="text-[10px] uppercase">Evento</span>
 </a>
-<a class="flex flex-col items-center gap-1 text-stone-400" href="#confirmar" style="">
-<span class="material-symbols-outlined" data-icon="mail" style="">mail</span>
-<span class="text-[10px] uppercase" style="">Confirmar</span>
+<a class="flex flex-col items-center gap-1 text-stone-400" href="#confirmar">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="text-[10px] uppercase">Confirmar</span>
 </a>
 </nav>
-<!-- Floating Action Button Contextual (Hidden on transactional pages, but keeping for home context) -->
-<button class="fixed bottom-24 right-24 md:bottom-28 md:right-8 w-12 h-12 bg-surface border border-primary/30 text-primary rounded-full shadow-lg flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-all z-40 active:scale-95" onclick='window.scrollTo({top: 0, behavior: "smooth"})' style="" title="Volver arriba">
-<span class="material-symbols-outlined" style="">keyboard_double_arrow_up</span>
-</button><button class="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-14 h-14 bg-primary-container text-on-primary-container rounded-full shadow-[0_8px_25px_rgba(255,215,0,0.5)] flex items-center justify-center hover:scale-110 transition-transform z-40 active:scale-95" style="">
-<span class="material-symbols-outlined" data-icon="share" style="">share</span>
+<!-- Floating Buttons -->
+<button class="fixed bottom-24 right-24 md:bottom-28 md:right-8 w-12 h-12 bg-surface border border-primary/30 text-primary rounded-full shadow-lg flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-all z-40 active:scale-95" onclick='window.scrollTo({top: 0, behavior: "smooth"})' title="Volver arriba">
+<span class="material-symbols-outlined">keyboard_double_arrow_up</span>
 </button>
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="hidden" frameborder="0" height="0" id="player" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Ptk_1Dc2iPY?autoplay=1&amp;loop=1&amp;playlist=Ptk_1Dc2iPY&amp;enablejsapi=1&amp;widgetid=1&amp;forigin=about%3Asrcdoc&amp;aoriginsup=1&amp;aorigins=https%3A%2F%2Fapp-companion-430619.appspot.com%2Chttps%3A%2F%2Fstitch.withgoogle.com&amp;vf=1" title="YouTube video player" width="0"></iframe>
+<button class="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-14 h-14 bg-primary-container text-on-primary-container rounded-full shadow-[0_8px_25px_rgba(255,215,0,0.5)] flex items-center justify-center hover:scale-110 transition-transform z-40 active:scale-95">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="hidden" frameborder="0" height="0" id="player" src="https://www.youtube.com/embed/Ptk_1Dc2iPY?autoplay=1&amp;loop=1&amp;playlist=Ptk_1Dc2iPY&amp;enablejsapi=1" title="YouTube video player" width="0"></iframe>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
+  // YouTube Music Logic
   let player;
   let isMuted = false;
   function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-      height: '0',
-      width: '0',
-      videoId: 'Ptk_1Dc2iPY',
-      playerVars: {
-        'autoplay': 1,
-        'loop': 1,
-        'playlist': 'Ptk_1Dc2iPY'
-      },
       events: {
         'onReady': (event) => { event.target.playVideo(); }
       }
@@ -437,16 +444,58 @@
     }
     isMuted = !isMuted;
   });
-</script><script>
+
+  // Countdown Logic targeting July 25, 2026, 16:00
+  const targetDate = new Date('July 25, 2026 16:00:00').getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+      document.getElementById('countdown').innerHTML = "<p class='font-headline-md text-primary'>¡Es hoy!</p>";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('days').innerText = days.toString().padStart(2, '0');
+    document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  // Scroll Reveal Animation Logic
+  function reveal() {
+    const reveals = document.querySelectorAll(".reveal");
+    for (let i = 0; i < reveals.length; i++) {
+      const windowHeight = window.innerHeight;
+      const elementTop = reveals[i].getBoundingClientRect().top;
+      const elementVisible = 100;
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      }
+    }
+  }
+
+  window.addEventListener("scroll", reveal);
+  window.addEventListener("load", reveal);
+
+  // RSVP Form Logic
   document.getElementById('rsvp-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const name = document.getElementById('guest-name').value;
     const formContainer = this.parentElement;
     
-    // Success State
     formContainer.innerHTML = `
       <div class="py-12 text-center space-y-6 animate-in fade-in zoom-in duration-700">
-        <span class="material-symbols-outlined text-primary text-7xl animate-bounce" style="">auto_awesome</span>
+        <span class="material-symbols-outlined text-primary text-7xl animate-bounce">auto_awesome</span>
         <h2 class="font-headline-md text-headline-md text-primary">¡Confirmado, ${name}!</h2>
         <p class="font-body-rt text-on-surface-variant italic text-xl">
           ¡Qué alegría! Nos encanta que nos acompañes en esta noche de ensueño.
@@ -455,9 +504,8 @@
       </div>
     `;
 
-    // Sparkle Burst Effect using existing fairyDustCanvas logic
-    if (typeof particles !== 'undefined') {
-      for (let i = 0; i < 200; i++) {
+    if (typeof Particle !== 'undefined') {
+      for (let i = 0; i < 150; i++) {
         const p = new Particle();
         p.y = Math.random() * canvas.height;
         p.speedY = (Math.random() - 0.5) * 5;
@@ -467,4 +515,5 @@
       }
     }
   });
-</script></body></html>
+</script>
+</body></html>
