@@ -354,16 +354,18 @@ function toggleAudio() {
 <label class="block font-label-sm text-outline mb-1">Nombre Completo</label>
 <input class="w-full bg-surface-container border-outline-variant rounded-xl focus:ring-secondary focus:border-secondary transition-all" id="guest-name" list="names-list" placeholder="Busca tu nombre..." required="" type="text"/>
 <datalist id="names-list">
-<option value="Valeria"></option>
-<option value="Juan"></option>
-<option value="Maria"></option>
-<option value="Carlos"></option>
-<option value="Sofia"></option>
+<option value="Andrea Ortega"></option>
+<option value="Juan Naranjo"></option>
+<option value="Nicole Chavarria"></option>
+<option value="Saúl Naranjo"></option>
+<option value="Otro Montón de gente"></option>
 </datalist>
 </div>
 <button class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl shadow-lg hover:shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all" type="submit">
-                            Confirmar Invitación
-                        </button>
+Confirmar Invitación
+</button>
+
+
 </form>
 </div>
 </div>
@@ -507,6 +509,16 @@ function toggleAudio() {
         particles.push(p);
       }
     }
+	
+	// 3. Enviar a WhatsApp
+    const telefono = "50687064761"; // TU NÚMERO
+	const texto = `*_¡Confirmación XV!_*
+Hola, soy _${name}_
+Asistiré este 25 de Julio
+¡Nos vemos en esta noche mágica!`;
+    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(texto)}`;
+
+    window.open(url, "_blank");
   });
 </script>
 </body></html>
