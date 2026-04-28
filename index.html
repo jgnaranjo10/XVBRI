@@ -109,6 +109,22 @@
 </head>
 <body class="bg-background text-on-background font-body-rt overflow-x-hidden fairy-dust-bg">
 <canvas class="fixed inset-0 pointer-events-none z-[1]" id="fairyDustCanvas"></canvas>
+<audio id="musica" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const audio = document.getElementById("musica");
+
+function toggleAudio() {
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
+}
+</script>
+
 <script>
   const canvas = document.getElementById('fairyDustCanvas');
   const ctx = canvas.getContext('2d');
@@ -165,7 +181,7 @@
 <a class="font-serif text-lg tracking-wide text-stone-500 hover:scale-110 hover:text-yellow-500 transition-all duration-300" href="#detalles">Evento</a>
 <a class="font-serif text-lg tracking-wide text-stone-500 hover:scale-110 hover:text-yellow-500 transition-all duration-300" href="#confirmar">Confirmar</a>
 </div>
-<button class="material-symbols-outlined text-yellow-600 cursor-pointer active:scale-95 duration-200 z-50" id="bgMusicToggle">volume_up</button>
+<button class="material-symbols-outlined text-yellow-600 cursor-pointer active:scale-95 duration-200 z-50" onclick="toggleAudio()">volume_up</button>
 </header>
 <main class="relative">
 <!-- 1. Hero / Cover Section -->
@@ -391,12 +407,12 @@
 <!-- Footer Shell -->
 <footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-center items-center gap-4 text-center bg-stone-100/50 backdrop-blur-sm border-t border-yellow-100 font-serif italic text-sm text-emerald-700">
 <div class="flex flex-col gap-2">
-<span class="font-serif text-xl text-yellow-600">Enchanted Celebration</span>
-<p class="text-stone-400">© 2024 Enchanted Celebration</p>
+<span class="font-serif text-xl text-yellow-600">Britany Chavarria Ortega</span>
+<p class="text-stone-400">© 2026 XV BRI</p>
 </div>
 <div class="flex gap-6 mt-4 md:mt-0">
-<a class="text-stone-400 hover:text-yellow-600 transition-colors" href="#">Privacy Policy</a>
-<a class="text-stone-400 hover:text-yellow-600 transition-colors" href="#">Contact Us</a>
+<a class="text-stone-400 hover:text-yellow-600 transition-colors" href="#">Inicio</a>
+<a class="text-stone-400 hover:text-yellow-600 transition-colors" href="#">Acompañanos</a>
 </div>
 </footer>
 <!-- Mobile Navigation Shell -->
@@ -421,30 +437,7 @@
 <button class="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-14 h-14 bg-primary-container text-on-primary-container rounded-full shadow-[0_8px_25px_rgba(255,215,0,0.5)] flex items-center justify-center hover:scale-110 transition-transform z-40 active:scale-95">
 <span class="material-symbols-outlined" data-icon="share">share</span>
 </button>
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="hidden" frameborder="0" height="0" id="player" src="https://www.youtube.com/embed/Ptk_1Dc2iPY?autoplay=1&amp;loop=1&amp;playlist=Ptk_1Dc2iPY&amp;enablejsapi=1" title="YouTube video player" width="0"></iframe>
-<script src="https://www.youtube.com/iframe_api"></script>
 <script>
-  // YouTube Music Logic
-  let player;
-  let isMuted = false;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      events: {
-        'onReady': (event) => { event.target.playVideo(); }
-      }
-    });
-  }
-  document.getElementById('bgMusicToggle').addEventListener('click', function() {
-    if (isMuted) {
-      player.unMute();
-      this.innerText = 'volume_up';
-    } else {
-      player.mute();
-      this.innerText = 'volume_off';
-    }
-    isMuted = !isMuted;
-  });
-
   // Countdown Logic targeting July 25, 2026, 16:00
   const targetDate = new Date('July 25, 2026 16:00:00').getTime();
 
