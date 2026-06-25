@@ -198,6 +198,7 @@ function toggleAudio() {
 </div>
 <div class="relative z-10 space-y-6 max-w-4xl">
 <span class="font-label-sm text-label-sm text-primary tracking-[0.3em] uppercase block">Britany Chavarria Ortega</span>
+<span id="guest-greeting" class="hidden font-label-sm text-sm text-secondary tracking-wide block mt-1"></span>
 <h1 class="font-display-lg text-[64px] md:text-[100px] leading-none text-primary italic">HABÍA UNA VEZ</h1>
 <div class="flex justify-center items-center gap-4 py-8">
 <div class="h-px w-12 md:w-24 bg-primary/30"></div>
@@ -590,8 +591,9 @@ Confirmar Invitación
 
   function showVIPBadge(guestName) {
     // Badge junto al nombre en el saludo del hero
-    const heroLabel = document.querySelector('#inicio .font-label-sm');
+    const heroLabel = document.getElementById('guest-greeting');
     if (heroLabel) {
+      heroLabel.classList.remove('hidden');
       heroLabel.innerHTML =
         '\u2728 Hola, ' + guestName + ' \u2728' +
         ' <span class="inline-flex items-center gap-1 ml-2 px-3 py-1 rounded-full bg-primary text-on-primary text-xs font-bold tracking-widest align-middle shadow-[0_2px_10px_rgba(52,211,153,0.5)]">' +
@@ -618,8 +620,11 @@ Confirmar Invitación
       input.value = guestName;
       input.readOnly = true;
       input.classList.add('cursor-default', 'font-bold');
-      const greeting = document.querySelector('#inicio .font-label-sm');
-      if (greeting) greeting.textContent = '\u2728 Hola, ' + guestName + ' \u2728';
+      const greeting = document.getElementById('guest-greeting');
+      if (greeting) {
+        greeting.textContent = '\u2728 Hola, ' + guestName + ' \u2728';
+        greeting.classList.remove('hidden');
+      }
 
       if (isVIP(guestName)) {
         showVIPBadge(guestName);
