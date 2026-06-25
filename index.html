@@ -106,6 +106,9 @@
         body {
             min-height: max(884px, 100dvh);
         }
+        body.vip-guest {
+            box-shadow: inset 0 0 120px rgba(52, 211, 153, 0.15);
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-rt overflow-x-hidden fairy-dust-bg">
@@ -567,6 +570,44 @@ Confirmar Invitación
     return raw.trim().replace(/\b\w/g, c => c.toUpperCase());
   }
 
+  // — LISTA VIP (hermanos de Britany) ————————————————————————————
+  const VIP_LIST = [
+    "Karina Naranjo",
+    "Sa\u00fal Naranjo",
+    "Gabriel Chavarria",
+    "Nicole Chavarria",
+  ];
+
+  function normalizeName(str) {
+    return str.trim().toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+
+  function isVIP(name) {
+    const n = normalizeName(name);
+    return VIP_LIST.some(v => normalizeName(v) === n);
+  }
+
+  function showVIPBadge(guestName) {
+    // Badge junto al nombre en el saludo del hero
+    const heroLabel = document.querySelector('#inicio .font-label-sm');
+    if (heroLabel) {
+      heroLabel.innerHTML =
+        '\u2728 Hola, ' + guestName + ' \u2728' +
+        ' <span class="inline-flex items-center gap-1 ml-2 px-3 py-1 rounded-full bg-primary text-on-primary text-xs font-bold tracking-widest align-middle shadow-[0_2px_10px_rgba(52,211,153,0.5)]">' +
+        '<span class="material-symbols-outlined text-sm">workspace_premium</span> VIP</span>';
+    }
+
+    // Badge junto al campo de nombre en el formulario RSVP
+    const wrapper = document.getElementById('name-field-wrapper');
+    if (wrapper) {
+      const vipTag = document.createElement('div');
+      vipTag.className = 'inline-flex items-center gap-1 mt-2 px-3 py-1 rounded-full bg-primary text-on-primary text-xs font-bold tracking-widest shadow-[0_2px_10px_rgba(52,211,153,0.5)]';
+      vipTag.innerHTML = '<span class="material-symbols-outlined text-sm">workspace_premium</span> Invitado VIP';
+      wrapper.appendChild(vipTag);
+    }
+  }
+
   function setupGuestField() {
     const guestName = getGuestFromURL();
     const input = document.getElementById('guest-name');
@@ -579,6 +620,11 @@ Confirmar Invitación
       input.classList.add('cursor-default', 'font-bold');
       const greeting = document.querySelector('#inicio .font-label-sm');
       if (greeting) greeting.textContent = '\u2728 Hola, ' + guestName + ' \u2728';
+
+      if (isVIP(guestName)) {
+        showVIPBadge(guestName);
+        document.body.classList.add('vip-guest');
+      }
     } else {
       input.value = '';
       input.readOnly = true;
@@ -628,7 +674,7 @@ Confirmar Invitación
       }
     }
 
-    const telefono = "50661095227";
+    const telefono = "50687064761";
     const texto = "*_\u00a1Confirmaci\u00f3n XV!_*\nHola, soy _" + name + "_\nAsistir\u00e9 este 25 de Julio a las 3 PM\n\u00a1Nos vemos en esta tarde m\u00e1gica!";
     const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(texto);
     window.open(url, "_blank");
