@@ -793,6 +793,24 @@ Confirmar Invitación
     const name = document.getElementById('guest-name').value.trim();
     if (!name || !getGuestFromURL()) return;
 
+    // Bloquear confirmaciones a partir del 17 de julio 2026
+    const hoy = new Date();
+    const limite = new Date('2026-07-17T00:00:00');
+    if (hoy >= limite) {
+      const formContainer = this.parentElement;
+      formContainer.innerHTML = \`
+        <div class="py-12 text-center space-y-6">
+          <span class="material-symbols-outlined text-red-400 text-7xl">event_busy</span>
+          <h2 class="font-headline-md text-headline-md text-primary">Confirmaciones cerradas</h2>
+          <p class="font-body-rt text-on-surface-variant italic text-lg">
+            El plazo para confirmar asistencia venció el 16 de julio.<br/>
+            Para consultas comunicarse directamente con el organizador.
+          </p>
+        </div>
+      \`;
+      return;
+    }
+
     const formContainer = this.parentElement;
     formContainer.innerHTML = `
       <div class="py-12 text-center space-y-6">
@@ -816,7 +834,7 @@ Confirmar Invitación
       }
     }
 
-    const telefono = "50661095227";
+    const telefono = "50687064761";
     const texto = "*_\u00a1Confirmaci\u00f3n XV!_*\nHola, soy _" + name + "_\nAsistir\u00e9 este 25 de Julio a las 3 PM\n\u00a1Nos vemos en esta tarde m\u00e1gica!";
     const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(texto);
     window.open(url, "_blank");
